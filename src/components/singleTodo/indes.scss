@@ -8,6 +8,11 @@
     padding: 13px;
     border-radius: 8px;
     margin-bottom: 15px;
+    @media (max-width: 500px) {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
     &.edit {
       background-color: #799bab;
     }
@@ -15,11 +20,15 @@
   &__label {
     color:#273e4b;
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 8px;
     cursor: pointer;
     font-weight: 500;
     font-size: 17px;
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
   }
   &__checkbox {
     display: none;
@@ -30,9 +39,16 @@
       cursor: not-allowed;
     }
   }
+  &__name {
+    margin-right: 8px;
+    max-width: 440px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   &__box {
     height: 18px;
     width: 18px;
+    flex: 0 0 18px;
     border: 2px solid #283e49;
     border-radius: 4px;
     display: flex;
@@ -55,7 +71,10 @@
     background-color: transparent;
     padding: 8px;
     color: #ffffff;
-    width: 400px;
+    flex: 1;
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
     &:focus {
       outline: none;
     }
@@ -77,13 +96,27 @@
     background-color: #311b92;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: all .5 ease-in-out ;
+    @media (max-width: 600px) {
+      padding: 5px 10px;
+    }
+    &:focus, &:active {
+      outline: none;
+    }
+    &:hover {
+      background-color: #594a97;
+    }
     &--delete {
       background-color: #F44336;
+      &:hover {
+        background-color: #f2574c;
+      }
     }
     &--update {
-      background-color: #ffc107;
       background-color: #fb8c00 ;
-      //color: #000000;
+      &:hover {
+        background-color: #fb9515;;
+      }
     }
   }
 }

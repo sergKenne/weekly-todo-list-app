@@ -4,6 +4,7 @@ import Modal from "../modal"
 import "./index.scss"
 import { CardType } from "./type"
 import { setSearchParams } from "../../utils"
+import { TaskType } from "../types"
 
 const Card = ({todo}: CardType) => {
   const [isModal, setIsModal] = useState<boolean>(false)
@@ -17,7 +18,7 @@ const Card = ({todo}: CardType) => {
       <div className="card__header" style={{backgroundColor: todo.bgColor}}>{ todo.day}</div>
       <div className="card__body">
         <ul className={`card__list ${showMore?"showMore":""}`}>
-          {todo.tasks.map((task) => (
+          {todo.tasks.map((task:TaskType) => (
             <li className="card__list-item" key={task.id}>
               <p className="card__name">Task:<span style={task.isDone ? { textDecoration: "line-through"}: {}}>{ task.name}</span></p>
               <label className="card__status">Status:

@@ -43,9 +43,17 @@ ul {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  transition: all .5 ease-in-out ;
+
   &--view {
     background-color: #9c27b0;
+    &:hover {
+      background-color: #ae3dc2!important;
+    }
+  }
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    background-color: #3a9741;
   }
 }
 
@@ -64,6 +72,10 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    margin-bottom: 40px;
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 

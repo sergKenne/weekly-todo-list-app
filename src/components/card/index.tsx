@@ -3,6 +3,7 @@ import { useState } from "react"
 import Modal from "../modal"
 import "./index.scss"
 import { CardType } from "./type"
+import { setSearchParams } from "../../utils"
 
 const Card = ({ todo }: CardType) => {
   const [isModal, setIsModal] = useState<boolean>(false)
@@ -18,7 +19,7 @@ const Card = ({ todo }: CardType) => {
         <ul className={`card__list ${showMore ? "showMore" : ""}`}>
           {todo.tasks.map((task) => (
             <li className="card__list-item" key={task.id}>
-              <p className="card__name">Task:<span style={task.isDone ? { textDecoration: "line-through" } : {}}>{task.name}</span></p>
+              <div className="card__name">Task:<span style={task.isDone ? { textDecoration: "line-through" } : {}}>{task.name}</span></div>
               <label className="card__status">Status:
                 <input type="checkbox" checked={task.isDone} disabled />
                 <span><img src="/check-mark.png" alt={"icon"} className="card__input-icon" /></span>
@@ -30,6 +31,7 @@ const Card = ({ todo }: CardType) => {
           {todo.tasks.length > 2 && <button className="btn btn--view" onClick={toggleShowMore}>{showMore ? "Hide" : "View More"}</button>}
           <button className="btn " onClick={() => {
             setIsModal(true)
+            setSearchParams(todo.day)
           }}>Actions</button>
         </div>
       </div>
