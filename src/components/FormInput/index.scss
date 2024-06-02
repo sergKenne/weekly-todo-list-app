@@ -1,0 +1,33 @@
+
+.form-input {
+
+  
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+  &__text {
+    flex: 1;
+    background-color: #f4eded;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #3a3838;
+    font-size: 18px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    flex: 0 0 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    color: #ffffff;
+    background-color: #1976d2;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
