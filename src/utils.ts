@@ -12,7 +12,7 @@ export class Storage {
 
 export function cleanSearchParams() {
   if ('URLSearchParams' in window) {
-      const url = new URL(window.location);
+      const url = new URL(window.location.href)
       url.searchParams.delete('day');
       history.pushState(null, '', url);
   }
@@ -20,7 +20,7 @@ export function cleanSearchParams() {
 
 export function setSearchParams(day: string) {
   if ('URLSearchParams' in window) {
-    const url = new URL(window.location)
+    const url = new URL(window.location.href)
     url.searchParams.set("day", day)
     history.pushState(null, '', url);
   }

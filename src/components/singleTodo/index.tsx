@@ -4,7 +4,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { RxUpdate } from "react-icons/rx";
 import { TaskType, TodoType } from "../../types";
-import { ActionType, TodosContext } from "../../context/todoContext";
+import { ActionType, TodoContextType, TodosContext } from "../../context/todoContext";
 
 type SingleTodo = {
   task: TaskType,
@@ -12,7 +12,7 @@ type SingleTodo = {
 }
 
 const SingleTodo = ({ task, todo }: SingleTodo) => {
-  const { dispatch } = useContext(TodosContext)
+  const { dispatch } = useContext(TodosContext) as TodoContextType
   const [updateTodo, setUpdateTodo] = useState(task.name)
   const [inputCheck, setInputCheck] = useState<boolean>(task.isDone)
   const [isEdit, setIsEdit] = useState<boolean>(false)

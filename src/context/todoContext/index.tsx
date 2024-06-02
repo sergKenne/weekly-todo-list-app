@@ -1,10 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, FC , useReducer } from "react";
 import { TodoType } from '../../types';
 import {data} from "../../data"
 import { Storage } from '../../utils';
 
 export type TodoContextType = {
-  dispatch: React.DispatchWithoutAction,
+  dispatch: React.Dispatch<Action>;
   state: {
     todos: TodoType[]
   }
